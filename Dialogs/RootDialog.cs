@@ -25,7 +25,7 @@
         {
             string data = context.Activity.ToString();
 
-            SenderId = context.Activity.From.Name;
+            SenderId = context.Activity.From.Id;
             SenderName = context.Activity.From.Name;
 
 
