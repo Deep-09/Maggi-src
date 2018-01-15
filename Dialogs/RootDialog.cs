@@ -10,14 +10,19 @@
     [Serializable]
     public class RootDialog : IDialog<object>
     {
+        
         private const string TakeVMSnapOption = "Take snap of Virtual Machine";
         private const string AddADAccountOption = "Add Active Directory Account";
         private const string UnlockADAccountOption = "Unlock Active Directory Account";
         private const string AddVMOption = "Add Virtual Machine";
 
+        
+
         public async Task StartAsync(IDialogContext context)
         {
             string data = context.Activity.ToString();
+
+            string result= context.Activity.From.ToString();
             await context.PostAsync(data);
             context.Wait(this.MessageReceivedAsync);
         }

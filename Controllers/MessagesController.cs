@@ -10,15 +10,20 @@ using FormBot.Dialogs;
 
 namespace Microsoft.Bot.Sample.FormBot
 {
+   
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        public string result;
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+            result = activity.From.ToString();
+
+            
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new RootDialog());
