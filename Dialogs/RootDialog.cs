@@ -24,7 +24,7 @@
         {
             string data = context.Activity.ToString();
 
-            string result= context.Activity.ChannelData;
+            string result= Convert.ToString(context.Activity.ChannelData);
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
             await context.PostAsync(result);
             context.Wait(this.MessageReceivedAsync);

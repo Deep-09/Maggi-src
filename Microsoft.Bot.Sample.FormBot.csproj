@@ -188,6 +188,7 @@
     <Compile Include="Dialogs\AddADAccountDialog.cs" />
     <Compile Include="Dialogs\AddVMDialog.cs" />
     <Compile Include="Dialogs\AutomationParameter.cs" />
+    <Compile Include="Dialogs\FromDetails.cs" />
     <Compile Include="Dialogs\RootAutomation.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Dialogs\TakeVMSnapDialog.cs" />
