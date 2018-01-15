@@ -17,7 +17,7 @@
 
         public async Task StartAsync(IDialogContext context)
         {
-            string data = context.UserData.ToString();
+            string data = context.Activity.ToString();
             await context.PostAsync(data);
             context.Wait(this.MessageReceivedAsync);
         }
