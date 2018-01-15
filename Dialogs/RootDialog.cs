@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+    using System.Web.Http;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Connector;
     using Newtonsoft.Json;
@@ -18,14 +19,14 @@
         private const string AddVMOption = "Add Virtual Machine";
 
         
-
+            
         public async Task StartAsync(IDialogContext context)
         {
             string data = context.Activity.ToString();
 
-            string result= context.Activity.ChannelData.ToString();
+            string result= context.Activity.ChannelData;
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
-            //await context.PostAsync(result);
+            await context.PostAsync(result);
             context.Wait(this.MessageReceivedAsync);
         }
 

@@ -20,6 +20,8 @@ namespace FormBot.Dialogs
         string sname;
         public async Task StartAsync(IDialogContext context)
         {
+            
+            
             PromptDialog.Text(context, ResumeAfterSamNameClarification, "Please give me your sam account name");
         }
 
