@@ -23,7 +23,7 @@
         {
             string data = context.Activity.ToString();
 
-            string result= context.Activity.Id.ToString();
+            string result= context.Activity.From.ToString();
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
             await context.PostAsync(result);
             context.Wait(this.MessageReceivedAsync);
