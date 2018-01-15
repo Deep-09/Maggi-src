@@ -17,20 +17,23 @@
         private const string AddADAccountOption = "Add Active Directory Account";
         private const string UnlockADAccountOption = "Unlock Active Directory Account";
         private const string AddVMOption = "Add Virtual Machine";
-        string result;
+        string SenderId;
+        string SenderName;
+
 
         public async Task StartAsync(IDialogContext context)
         {
             string data = context.Activity.ToString();
 
-            result = context.Activity.From.Name;
+            SenderId = context.Activity.From.Name;
+            SenderName = context.Activity.From.Name;
 
 
 
             //System.IO.File.AppendAllText("ErrorLog.txt", "\n" + System.DateTime.Now + result);
 
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
-            await context.PostAsync(result);
+            await context.PostAsync($"Thanks{SenderName} : {SenderId}");
             context.Wait(this.MessageReceivedAsync);
         }
 
