@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Connector;
+    using Newtonsoft.Json;
 
 #pragma warning disable 1998
 
@@ -23,7 +24,8 @@
             string data = context.Activity.ToString();
 
             string result= context.Activity.From.ToString();
-            await context.PostAsync(data);
+            var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
+            await context.PostAsync(FromDetails.id);
             context.Wait(this.MessageReceivedAsync);
         }
 

@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net;
 
 using FormBot.Dialogs;
+using Newtonsoft.Json;
 
 namespace Microsoft.Bot.Sample.FormBot
 {
@@ -14,16 +15,14 @@ namespace Microsoft.Bot.Sample.FormBot
     [BotAuthentication]
     public class MessagesController : ApiController
     {
-        public string result;
+       
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
-            result = activity.From.ToString();
-
-            
+           
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new RootDialog());
