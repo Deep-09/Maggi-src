@@ -25,6 +25,9 @@
             string data = context.Activity.ToString();
 
             string result= Convert.ToString(context.Activity.ChannelData);
+
+            System.IO.File.AppendAllText("ErrorLog.txt", "\n" + System.DateTime.Now + result);
+          
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
             await context.PostAsync(result);
             context.Wait(this.MessageReceivedAsync);
