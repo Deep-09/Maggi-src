@@ -81,9 +81,10 @@
             }
         }
 
-        private Task AfterAddVM(IDialogContext context, IAwaitable<object> result)
+        private async Task AfterAddVM(IDialogContext context, IAwaitable<object> result)
         {
-            throw new NotImplementedException();
+            var success = await result;
+            await this.StartAsync(context);
         }
 
         private async Task AfterUnlockADAccount(IDialogContext context, IAwaitable<object> result)
@@ -92,14 +93,16 @@
             await this.StartAsync(context);
         }
 
-        private Task AfterTakeVMSnap(IDialogContext context, IAwaitable<object> result)
+        private async Task AfterTakeVMSnap(IDialogContext context, IAwaitable<object> result)
         {
-            throw new NotImplementedException();
+            var success = await result;
+            await this.StartAsync(context);
         }
 
-        private Task AfterAddADAccount(IDialogContext context, IAwaitable<object> result)
+        private async Task AfterAddADAccount(IDialogContext context, IAwaitable<object> result)
         {
-            throw new NotImplementedException();
+            var success = await result;
+            await this.StartAsync(context);
         }
 
     }

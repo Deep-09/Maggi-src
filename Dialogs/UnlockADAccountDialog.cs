@@ -76,7 +76,7 @@ namespace FormBot.Dialogs
             IRestResponse response1 = client.Execute(request1);
 
             await context.PostAsync($"I will unlock account for {sname} as soon as possible... Visit me again whenever you need my help. Have a great day:)");
-            context.Done(true);
+            
         }
 
     }
