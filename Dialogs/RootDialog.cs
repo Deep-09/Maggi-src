@@ -33,7 +33,7 @@
             //System.IO.File.AppendAllText("ErrorLog.txt", "\n" + System.DateTime.Now + result);
 
             //var FromDetails = JsonConvert.DeserializeObject<FromDetails>(result);
-            await context.PostAsync($"Thanks {SenderName} : {SenderId}");
+            //await context.PostAsync($"Thanks {SenderName} : {SenderId}");
             context.Wait(this.MessageReceivedAsync);
         }
 
