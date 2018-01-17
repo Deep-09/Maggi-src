@@ -155,6 +155,7 @@ namespace FormBot.Dialogs
             request1.RequestFormat = DataFormat.Json;
             IRestResponse response1 = client.Execute(request1);
             await context.PostAsync($"I will create AD account for {sname} soon... Visit me again whenever you need my help... Have a great day :)");
+            context.Done(true);
         }
     }
 }
