@@ -20,8 +20,7 @@ namespace FormBot.Dialogs
         string sname;
         public async Task StartAsync(IDialogContext context)
         {
-            
-            
+
             PromptDialog.Text(context, ResumeAfterSamNameClarification, "Please give me your sam account name");
         }
 
@@ -77,6 +76,7 @@ namespace FormBot.Dialogs
             IRestResponse response1 = client.Execute(request1);
 
             await context.PostAsync($"I will unlock account for {sname} as soon as possible... Visit me again whenever you need my help. Have a great day:)");
+            context.Done(String.Empty);
         }
 
     }
